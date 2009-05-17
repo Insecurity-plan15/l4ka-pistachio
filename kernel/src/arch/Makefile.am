@@ -1,0 +1,3 @@
+DIST_SUBDIRS = x86
+
+SUBDIRS = @ARCH@

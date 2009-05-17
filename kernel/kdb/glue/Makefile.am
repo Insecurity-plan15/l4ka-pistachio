@@ -1,0 +1,3 @@
+DIST_SUBDIRS = v4-x86
+
+SUBDIRS = @API@-@ARCH@

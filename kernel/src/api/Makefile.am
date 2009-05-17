@@ -1,0 +1,3 @@
+DIST_SUBDIRS = v4
+
+SUBDIRS = ${API}

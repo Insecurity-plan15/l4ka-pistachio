@@ -1,0 +1,35 @@
+## Processor type
+
+# with cpu i486
+# with cpu i586
+# with cpu i686
+with cpu p4
+# with cpu k8
+# with cpu c3
+# with cpu simics
+
+## Platform
+
+with platform pc99
+# enable smp
+
+## Miscellaneous
+
+# enable ioapic
+
+## Kernel
+
+# enable ipc_fastpath
+enable debug
+# enable debug_symbols
+# enable experimental
+# enable perfmon
+# enable spin_wheels
+# enable new_mdb
+# enable x86_small_spaces
+
+## Debugger
+
+# enable kdb
+# enable kdb_input_hlt
+# enable kdb_no_asserts
