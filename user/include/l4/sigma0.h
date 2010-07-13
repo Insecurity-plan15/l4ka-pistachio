@@ -89,7 +89,7 @@ L4_INLINE L4_Fpage_t L4_Sigma0_GetAny (L4_ThreadId_t s0,
 
 
 /**
- *  L4_Sigma0_GetSpecial(L4_Word_t type)
+ *  L4_Sigma0_GetSpecial
  *
  *  Searches the KIP's memory descriptors for special memory segment. Requests
  *  sigma0 to map the relevant pages into the current address space, (1:1 if
@@ -117,7 +117,7 @@ L4_INLINE void *L4_Sigma0_GetSpecial(L4_Word_t type, void* address, L4_Word_t pa
                 address = (void *) start;
             }
                     
-            if ( L4_Myself() == sigma0 )
+            if ( L4_IsThreadEqual(L4_Myself(), sigma0) )
 		return 0; 
 
             
@@ -128,7 +128,7 @@ L4_INLINE void *L4_Sigma0_GetSpecial(L4_Word_t type, void* address, L4_Word_t pa
 		L4_Fpage_t rcvfpage = L4_Fpage( rcvstart, pagesize );
 
 		fpage.X.rwx = L4_ReadWriteOnly;
-		fpage = L4_Sigma0_GetPage( sigma0, fpage, rcvfpage );
+		fpage = L4_Sigma0_GetPage_RcvWindow( sigma0, fpage, rcvfpage );
 		if( L4_IsNilFpage(fpage) )
 		    return address;
 
